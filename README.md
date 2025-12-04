@@ -117,16 +117,37 @@ The application uses a MySQL database with the following main entities:
 
 ### Installation
 
-**Clone the repository**
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd frontend
+   ```
 
-**Install dependencies**
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-**Environment Setup**  
-Create a `.env.local` file with:
+3. **Environment Setup**
+   Create a `.env.local` file with:
+   ```env
+   DATABASE_URL="mysql://user:password@localhost:3306/egarant"
+   JWT_SECRET="your-jwt-secret"
+   PINATA_API_KEY="your-pinata-api-key"
+   PINATA_SECRET_KEY="your-pinata-secret"
+   EMAIL_SERVER="your-email-server-config"
+   ```
 
-**Database Setup**
+4. **Database Setup**
+   ```bash
+   npx prisma generate
+   npx prisma db push
+   ```
 
-**Run Development Server**
+5. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
 
 ### Available Scripts
 
@@ -172,29 +193,3 @@ For questions or feedback, reach out to [aleksandar@e-seo.info](mailto:aleksanda
 ---
 
 _Built with ❤️ using Next.js 15 and modern web technologies_
-
-```
-npm run dev
-```
-
-```
-npx prisma generate
-npx prisma db push
-```
-
-```
-DATABASE_URL="mysql://user:password@localhost:3306/db"
-JWT_SECRET="your-jwt-secret"
-PINATA_API_KEY="your-pinata-api-key"
-PINATA_SECRET_KEY="your-pinata-secret"
-EMAIL_SERVER="your-email-server-config"
-```
-
-```
-npm install
-```
-
-```
-git clone <repository-url>
-cd frontend
-```
